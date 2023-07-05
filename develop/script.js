@@ -1,6 +1,4 @@
-//1: Make a string consisting of Alphabets(lowercase and uppercase), Numbers, and Special Characters. the we will use Math. random() and Math. floor() method to generate a number in between 0 and l-1(where l is length of string).
 
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Declare variables
@@ -11,16 +9,17 @@ var special = "!#$()*+,-./:;<=>?@[^_`{|}~";
 var character
 var password = "";
 
-
 function generatePassword(){
-  console.log("You clicked the button!");
-  character = "";
+  console.log("You clicked the button!"); // Checking that the button worked.
+  character = ""; //Placed variables within function 
   password = "";
-    //Prompt the user for password criteria
+  var typeCheck = false //variable to call if user doesn't choose a character type
+
+  //Prompt the user for password criteria
   var characterLength = prompt("Please choose the number of character you want between 8 and 128."); 
 
   var length = Number(characterLength);
-    
+
     if (length = NaN || characterLength < 8 || characterLength > 128) {
       alert("Enter a valid number of characters");
       return "Try again.";
@@ -41,7 +40,7 @@ function generatePassword(){
     for (var i = 0 ; i < characterLength; i++) {
     password += character[Math.floor(Math.random()*character.length)];
     }
-    return password;
+    return password; 
 }
 
 // Write password to the #password input
@@ -50,7 +49,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  alert("Here is your password.");
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
