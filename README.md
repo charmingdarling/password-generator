@@ -25,8 +25,7 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
-Link: 
+Link: https://charmingdarling.github.io/password-generator/
 
-Screenshot: 
 
-![Alt text](image.png)
+Screenshot: ![Alt text](image.png)
