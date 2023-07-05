@@ -4,20 +4,22 @@
 var generateBtn = document.querySelector("#generate");
 
 // Declare variables
-var lowercase = ["abcdefghijklmnopqrstuvwxyz"];
-var uppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var number = ["0123456789"];
-var special = ["!#$()*+,-./:;<=>?@[^_`{|}~"];
-var character = "";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var number = "0123456789";
+var special = "!#$()*+,-./:;<=>?@[^_`{|}~";
+var character
 var password = "";
 
-function generatePassword() {
+
+function generatePassword(){
   console.log("You clicked the button!");
-
+  character = "";
+  password = "";
     //Prompt the user for password criteria
-    var characterLength = prompt("Please choose the number of character you want between 8 and 128."); 
+  var characterLength = prompt("Please choose the number of character you want between 8 and 128."); 
 
-    var length = Number(characterLength);
+  var length = Number(characterLength);
     
     if (length = NaN || characterLength < 8 || characterLength > 128) {
       alert("Enter a valid number of characters");
@@ -25,10 +27,10 @@ function generatePassword() {
       }
 
     if (confirm("Would you like to use lowercase letters?")){
-    character = character.concat(lowercase);}
+    character = character.concat(lowerCase);}
 
     if (confirm("Would you like to use uppercase letters?")){
-    character = character.concat(uppercase);}
+    character = character.concat(upperCase);}
 
     if (confirm("Would you like to use numbers?")){
     character = character.concat(number)}
@@ -37,9 +39,8 @@ function generatePassword() {
     character = character.concat(special);}
 
     for (var i = 0 ; i < characterLength; i++) {
-    password += character[Math.floor(Math.random()*characterLength.length)];
+    password += character[Math.floor(Math.random()*character.length)];
     }
-    
     return password;
 }
 
